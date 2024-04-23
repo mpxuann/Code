@@ -1,0 +1,70 @@
+# Project: myPro001
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = o/Main.o o/Init.o o/draw.o o/pointcalculation.o o/exceptio.o o/genlib.o o/graphics.o o/imgui.o o/linkedlist.o o/random.o o/simpio.o o/strlib.o o/judge.o o/file.o o/attach.o
+LINKOBJ  = o/Main.o o/Init.o o/draw.o o/pointcalculation.o o/exceptio.o o/genlib.o o/graphics.o o/imgui.o o/linkedlist.o o/random.o o/simpio.o o/strlib.o o/judge.o o/file.o o/attach.o
+LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -mwindows
+INCS     = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"./include"
+CXXINCS  = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"./include"
+BIN      = myPro001.exe
+CXXFLAGS = $(CXXINCS) -std=c11
+CFLAGS   = $(INCS) -std=c11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+o/Main.o: Main.c
+	$(CC) -c Main.c -o o/Main.o $(CFLAGS)
+
+o/Init.o: myfun/Init.c
+	$(CC) -c myfun/Init.c -o o/Init.o $(CFLAGS)
+
+o/draw.o: myfun/draw.c
+	$(CC) -c myfun/draw.c -o o/draw.o $(CFLAGS)
+
+o/pointcalculation.o: myfun/pointcalculation.c
+	$(CC) -c myfun/pointcalculation.c -o o/pointcalculation.o $(CFLAGS)
+
+o/exceptio.o: libgraphics/exceptio.c
+	$(CC) -c libgraphics/exceptio.c -o o/exceptio.o $(CFLAGS)
+
+o/genlib.o: libgraphics/genlib.c
+	$(CC) -c libgraphics/genlib.c -o o/genlib.o $(CFLAGS)
+
+o/graphics.o: libgraphics/graphics.c
+	$(CC) -c libgraphics/graphics.c -o o/graphics.o $(CFLAGS)
+
+o/imgui.o: libgraphics/imgui.c
+	$(CC) -c libgraphics/imgui.c -o o/imgui.o $(CFLAGS)
+
+o/linkedlist.o: libgraphics/linkedlist.c
+	$(CC) -c libgraphics/linkedlist.c -o o/linkedlist.o $(CFLAGS)
+
+o/random.o: libgraphics/random.c
+	$(CC) -c libgraphics/random.c -o o/random.o $(CFLAGS)
+
+o/simpio.o: libgraphics/simpio.c
+	$(CC) -c libgraphics/simpio.c -o o/simpio.o $(CFLAGS)
+
+o/strlib.o: libgraphics/strlib.c
+	$(CC) -c libgraphics/strlib.c -o o/strlib.o $(CFLAGS)
+
+o/judge.o: myfun/judge.c
+	$(CC) -c myfun/judge.c -o o/judge.o $(CFLAGS)
+
+o/file.o: myfun/file.c
+	$(CC) -c myfun/file.c -o o/file.o $(CFLAGS)
+
+o/attach.o: myfun/attach.c
+	$(CC) -c myfun/attach.c -o o/attach.o $(CFLAGS)

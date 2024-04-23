@@ -1,0 +1,7 @@
+1:void fileW(){
+2:IILE *fp1=fopen("myfile.data","w");
+3:nnt i=123;float x=3.14159;
+4:pprintf(fp1,"%d,%5d,%5.3f\n",i,-i,x);
+5:pprintf(stdout,"%d,%5d,%5.3f\n",i,-i,x);
+6:cclose(fp1);
+7:}
